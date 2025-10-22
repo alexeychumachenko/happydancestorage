@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+
+<div class="center-content">
+	<form action="{{ url_for('register') }}" method="post">
+		<input type="text" name="firstname" placeholder="Имя" required />
+		<input type="text" name="lastname" placeholder="Фамилия" required />
+		<input type="text" name="username" placeholder="Логин" required />
+		<input type="password" name="password" placeholder="Пароль" required />
+		<select id="role" name="role">
+			<option value="student">Студент</option>
+			<option value="teacher">Преподаватель</option>
+		</select>
+	  <button type="submit">Зарегистрироваться</button>
+	</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Параметры профиля{% endblock %}
+
+{% block content %}
+
+<h1>Параметры</h1>
+
+<div class="center-content profile-settings">
+	<form action="{{ url_for('profileSettings') }} " method="post" id="profile-settings">
+		<table>
+			<tr>
+				<td class="left-table-column"><label for="first_name">Имя</label></td>
+				<td class="right-table-column"><input type="text" name="first_name" value="{{ current_user.first_name }}" id="first_name" required /></td>
+			</tr>
+			<tr>
+				<td class="left-table-column"><label for="last_name">Фамилия</label></td>
+				<td class="right-table-column"><input type="text" name="last_name" value="{{ current_user.last_name }}" id="last_name" required /></td>
+			</tr>
+		</table>
+		
+		
+		<button type="submit" class="blue-big-button" onClick="saveChanges()">Сохранить изменения</button>
+	</form>
+</div>
+
+<script>
+	function saveChanges() {
+		var firstName = document.getElementById('first_name').value;
+		var lastName = document.getElementById('last_name').value;
+
+		const formData = new FormData();
+		formData.append('first_name', firstName);
+		formData.append('last_name', lastName);
+
+		fetch('/saveSettings', {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => response.json());
+	}
+</script>
+
+{% endblock %}

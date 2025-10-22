@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %} Загрузка файла {% endblock %}
+
+{% block content %}
+
+<h2>Загрузить файл</h2>
+<div class="center-content" id="cc-upload-file">
+	<form action="/upload" method="POST" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td class="left-table-column"><label for "file">Файл</label></td>
+				<td class="right-table-column"><input type="file" name="file" id="file" required /></td>
+			</tr>
+			<tr>
+				<td class="left-table-column"><label for "title">Тема</label></td>
+				<td class="right-table-column"><input type="text" name="title" id="title" required /></td>
+			</tr>
+			<tr>
+				<td class="left-table-column">Описание<br>(необязательно)</td>
+				<td class="right-table-column"><textarea name="description" id="description"></textarea></td>
+			</tr>
+			<tr>
+				<td class="left-table-column"><label for "title">Дисциплина</label></td>
+				<td class="right-table-column"><input type="text" name="subject" id="subject" required /><br></td>
+			</tr>
+			<tr>
+				<td class="left-table-column"><label for "title">Научный руководитель</label></td>
+				<td class="right-table-column">
+					<select id="supervisor" name="supervisor">
+						{% for teacher in teachers %}
+						<option>{{ teacher[0] }} {{ teacher[1] }}</option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="left-table-column"><label for "title">Год издания</label></td>
+				<td class="right-table-column"><input type="number" name="releaseYear" value="2025" required /><br></td>
+			</tr>
+		</table>
+		<button onclick="uploadFile()" type="submit" class="blue-big-button">Отправить</button>
+	</form>
+</div>
+
+<script>
+	function uploadFile() {
+		const fileInput = document.getElementById('file');
+		const file = fileInput.files[0];
+
+		if (!file) {
+			alert('Выберите файл');
+			return;
+		}
+
+		const formData = new FormData();
+		formData.append('file', file);
+
+		fetch('/upload', {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => response.json());
+	}
+</script>
+{% endblock %}
+

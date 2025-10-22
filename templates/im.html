@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% if diaId == -1 %}
+Диалоги
+{% else %}
+
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+{% if diaId == -1 %}
+	<h1>Диалоги</h1>
+	<a href="/uploadFile"><button class="blue-big-button">Начать диалог</button></a>
+	<ul class="dialog-list">
+	{% for dia in dialogs %}
+		{% if current_user.id == dia[1] %}
+		<a href="/im?dialogId={{ dia[0] }}">{{ dia[3] }} {{ dia[4] }}</a>
+		{% else %}
+		<a href="/im?dialogId={{ dia[0] }}">{{ dia[3] }} {{ dia[4] }}</a>
+		{% endif %}
+	{% endfor %}
+	</ul>
+{% else %}
+	<a href="/im"><- Назад</a>
+	<h2></h2>
+	<ul class="message-list">
+	{% for msg in messages %}
+	<div class="message-box">
+		<b>{{ msg[12] }} {{ msg[13] }}</b><br>
+		<span class="message-time"><i>{{ msg[4] }}</i></span><br>
+		<span class="message-caption">{{ msg[1] }}</span><br><br>
+	</div>
+	{% endfor %}
+	</ul>
+	<textarea id="message-textarea"></textarea>
+	<button class="blue-big-button" id="send-message-button">Отправить</button>
+	
+<script>
+
+document.getElementById('send-message-button').addEventListener('click', function() {
+
+  fetch('http://localhost:5000/sendMessage', {      // URL для отправки запроса
+    method: 'POST',                       // Метод POST
+    headers: {
+      'Content-Type': 'application/json' // Заголовок с типом данных
+    },
+    body: JSON.stringify({                // Данные для отправки (пример)
+      key1: document.getElementById("message-textarea").value,
+      key2: {{ diaId }}
+    })
+  })
+  .then(response => response.json())    // Преобразуем ответ в JSON
+  .then(data => {
+    console.log('Ответ сервера:', data);
+    alert('Данные успешно отправлены');
+  })
+  .catch(error => {
+    console.error('Ошибка:', error);
+    alert('Ошибка при отправке данных');
+  });
+});
+/*
+function sendMessage()
+{
+	var value1 = document.getElementById("message-textarea").value;
+	var value2 = {{ diaId }};
+
+	const params = {
+		param1: value1,
+		param2: value2; 
+	};
+
+	const options = {
+		method: 'POST',
+		body: JSON.stringify( params )  
+	};
+	fetch( '/sendMessage?caption=value1&dialogId=value2', options )
+		.then( response => response.json() )
+		.then( response => {
+			// Do something with response.
+		} );
+}
+	*/
+</script>
+
+{% endif %}
+
+{% endblock %}

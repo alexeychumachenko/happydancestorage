@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ current_profile.first_name }} {{ current_profile.last_name }} {% endblock %}
+
+{% block content %}
+
+<h1>{{ current_profile.first_name }} {{ current_profile.last_name }}</h1>
+
+{% if current_profile.id == current_user.id %}
+<div class="profile-button-block">
+	<a href="/uploadFile">Загрузить работу</a>
+	<a href="/user/{{ current_profile.username }}?show=favorites">Избранное</a>
+	<a href="/settings">Параметры</a>
+	<a href="/logout">Выход</a>
+</div>
+{% endif %}
+
+{% if show_title == 'files' %}
+<div class="profile-block">
+	<h2>Работы</h2>
+	<ul class="profile-file-list">
+		{% for file in files %}
+		<a href="/work?id={{ file[0] }}"> {{ file[2] }} <span class="right">{{ file[10] }}</span></a>
+		{% endfor %}
+	</ul>
+</div>
+{% elif show_title == 'favorites' %}
+	<h2>Избранное</h2>
+{% else %}
+
+{% endif %}
+
+{% endblock %}

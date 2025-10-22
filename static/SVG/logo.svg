@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   width="500.0px"
+   height="500.0px"
+   viewBox="0 0 500.0 500.0"
+   version="1.1"
+   id="SVGRoot"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title898">logoat</title>
+  <defs
+     id="defs10">
+    <rect
+       id="rect913"
+       height="560.89987"
+       width="732.17547"
+       y="150"
+       x="-50" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:snap-global="false"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-4"
+     inkscape:window-x="-4"
+     inkscape:window-height="1147"
+     inkscape:window-width="1920"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="233.17209"
+     inkscape:cx="295.35132"
+     inkscape:zoom="1.2222732"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid19"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata13">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>logoat</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Слой 1">
+    <rect
+       ry="130"
+       y="0"
+       x="0"
+       height="500"
+       width="500"
+       id="rect26"
+       style="fill:#000080;fill-rule:evenodd;stroke-width:2.073;fill-opacity:1" />
+    <text
+       transform="translate(176.7199,-116.17697)"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect913);fill:#000000;fill-opacity:1;stroke:none"
+       id="text911"
+       xml:space="preserve" />
+    <rect
+       style="fill:#e9c6af;fill-opacity:1;fill-rule:evenodd;stroke-width:4.30863"
+       id="rect917-1"
+       width="360"
+       height="360"
+       x="570"
+       y="90"
+       rx="93.599998" />
+    <rect
+       rx="62.399998"
+       y="160"
+       x="580"
+       height="240"
+       width="240"
+       id="rect917"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:2.87241" />
+    <path
+       inkscape:transform-center-y="9.3266067"
+       inkscape:transform-center-x="9.2705098"
+       d="M 199.57037,441.99705 469.07758,266.54519 80.02555,131.0163 97.217714,452.14231 409.1152,182.97782 122.41583,37.303663 Z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="false"
+       sodipodi:arg2="0.060667425"
+       sodipodi:arg1="1.7273982"
+       sodipodi:r2="239.94864"
+       sodipodi:r1="192.35384"
+       sodipodi:cy="251.99705"
+       sodipodi:cx="229.57038"
+       sodipodi:sides="3"
+       id="path964"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:2.073"
+       sodipodi:type="star" />
+  </g>
+</svg>

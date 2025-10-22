@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+
+{% if current_user_account.user_role == "teacher" %}
+<h1>Hello, World!</h1>
+{% endif %}
+
+<input type="text" class="index-search-input" placeholder="Поиск" />
+		
+{% endblock %}

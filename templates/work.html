@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ current_file.file_name }} {% endblock %}
+
+{% block content %}
+
+<h2>{{ current_file.file_title }}</h2>
+<span class="work-author-name"><a href="/user/{{ current_profile.username }}">{{ current_profile.first_name }} {{ current_profile.last_name }}</a> • {{ current_file.upload_date }}</span>
+
+<ul>
+	<li>{{ current_file.file_id }}</li>
+</ul>
+
+
+<br>
+<ul>
+	{% for text in files %}
+	<li> {{ text[1] }} </li>
+	{% endfor %}
+</ul>
+
+{% endblock %}
+
